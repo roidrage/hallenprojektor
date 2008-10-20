@@ -14,6 +14,7 @@ require 'places_controller'
 
 class HallenController < OSX::NSWindowController
   include NotificationHub
+  include OSX
   
   notify :update_places_menu, :when => :places_loaded
   
@@ -33,10 +34,26 @@ class HallenController < OSX::NSWindowController
   end
   
   def update_places_menu(notification)
-    @places_controller.places[1].each do |place|
-      item = @menu_item.menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{place['place']['name']} in #{place['place']['city']}", nil, "", @menu_item.menu.numberOfItems)
-      item.setTarget self
+    places = @places_controller.places[1]
+    
+    cities = places.collect do |place|
+      place['place']['city'].strip
+    end.uniq
+    
+    cities.each do |city|
+      city_name = (city.strip.size > 0 ? city : "Überall")
+      city_item = @menu_item.menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{city_name}", nil, "", @menu_item.menu.numberOfItems)
+      city_menu = NSMenu.alloc.init
+      places.find_all{|p| p['place']['city'].strip == city}.each do |place|
+        place_item = city_menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{place['place']['name']}", nil, "", city_menu.numberOfItems)
+        place_item.setTarget self
+        place_item.setEnabled true
+      end
+      city_item.setTarget self
+      city_item.setSubmenu city_menu
+      city_item.setEnabled true
     end
+    
   end
   
   def setup_status_menu
