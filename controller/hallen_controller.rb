@@ -40,11 +40,11 @@ class HallenController < OSX::NSWindowController
       place['place']['city'].strip
     end.uniq
     
-    cities.each do |city|
+    cities.sort.each do |city|
       city_name = (city.strip.size > 0 ? city : "Überall")
       city_item = @menu_item.menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{city_name}", nil, "", @menu_item.menu.numberOfItems)
       city_menu = NSMenu.alloc.init
-      places.find_all{|p| p['place']['city'].strip == city}.each do |place|
+      places.find_all{|p| p['place']['city'].strip == city}.sort{|place1, place2| place1['place']['name'] <=> place2['place']['name']}.each do |place|
         place_item = city_menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{place['place']['name']}", nil, "", city_menu.numberOfItems)
         place_item.setTarget self
         place_item.setEnabled true
