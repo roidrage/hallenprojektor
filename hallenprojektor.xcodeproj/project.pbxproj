@@ -13,6 +13,12 @@
 		4DDCA70A0ACC9A6100E082CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		4DDCA70C0ACC9A6100E082CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		4DDCA70D0ACC9A6100E082CE /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */; };
+		FEB9DA680EAD098D004903A1 /* hallen_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = FEB9DA670EAD098C004903A1 /* hallen_controller.rb */; };
+		FEB9DA930EAD0E2F004903A1 /* place.rb in Resources */ = {isa = PBXBuildFile; fileRef = FEB9DA920EAD0E2F004903A1 /* place.rb */; };
+		FEB9DA9F0EAD117E004903A1 /* load_operation.rb in Resources */ = {isa = PBXBuildFile; fileRef = FEB9DA9E0EAD117E004903A1 /* load_operation.rb */; };
+		FEB9DAA10EAD11B5004903A1 /* load_operation_queue.rb in Resources */ = {isa = PBXBuildFile; fileRef = FEB9DAA00EAD11B5004903A1 /* load_operation_queue.rb */; };
+		FEB9DAA90EAD1219004903A1 /* notification_hub.rb in Resources */ = {isa = PBXBuildFile; fileRef = FEB9DAA80EAD1219004903A1 /* notification_hub.rb */; };
+		FEB9DAC30EAD1647004903A1 /* places_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = FEB9DAC20EAD1647004903A1 /* places_controller.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		4DDCA7120ACC9A6100E082CE /* hallenprojektor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hallenprojektor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
 		E8F5E25803AEB7C803A81C6F /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		FEB9DA670EAD098C004903A1 /* hallen_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = hallen_controller.rb; path = controller/hallen_controller.rb; sourceTree = "<group>"; };
+		FEB9DA920EAD0E2F004903A1 /* place.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = place.rb; path = model/place.rb; sourceTree = "<group>"; };
+		FEB9DA9E0EAD117E004903A1 /* load_operation.rb */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text.script.ruby; name = load_operation.rb; path = model/load_operation.rb; sourceTree = "<group>"; };
+		FEB9DAA00EAD11B5004903A1 /* load_operation_queue.rb */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text.script.ruby; name = load_operation_queue.rb; path = model/load_operation_queue.rb; sourceTree = "<group>"; };
+		FEB9DAA80EAD1219004903A1 /* notification_hub.rb */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text.script.ruby; name = notification_hub.rb; path = model/notification_hub.rb; sourceTree = "<group>"; };
+		FEB9DAC20EAD1647004903A1 /* places_controller.rb */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text.script.ruby; name = places_controller.rb; path = controller/places_controller.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +56,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FEB9DAC20EAD1647004903A1 /* places_controller.rb */,
+				FEB9DAA80EAD1219004903A1 /* notification_hub.rb */,
+				FEB9DAA00EAD11B5004903A1 /* load_operation_queue.rb */,
+				FEB9DA9E0EAD117E004903A1 /* load_operation.rb */,
+				FEB9DA920EAD0E2F004903A1 /* place.rb */,
+				FEB9DA670EAD098C004903A1 /* hallen_controller.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -171,6 +189,12 @@
 				4DDCA7060ACC9A6100E082CE /* MainMenu.nib in Resources */,
 				4DDCA7070ACC9A6100E082CE /* InfoPlist.strings in Resources */,
 				4DDCA7080ACC9A6100E082CE /* rb_main.rb in Resources */,
+				FEB9DA680EAD098D004903A1 /* hallen_controller.rb in Resources */,
+				FEB9DA930EAD0E2F004903A1 /* place.rb in Resources */,
+				FEB9DA9F0EAD117E004903A1 /* load_operation.rb in Resources */,
+				FEB9DAA10EAD11B5004903A1 /* load_operation_queue.rb in Resources */,
+				FEB9DAA90EAD1219004903A1 /* notification_hub.rb in Resources */,
+				FEB9DAC30EAD1647004903A1 /* places_controller.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
