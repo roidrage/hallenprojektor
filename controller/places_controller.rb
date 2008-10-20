@@ -1,5 +1,6 @@
 require 'osx/cocoa'
 require 'notification_hub'
+require 'json/pure'
 
 class PlacesController < OSX::NSWindowController
   include NotificationHub
@@ -10,7 +11,7 @@ class PlacesController < OSX::NSWindowController
   end
   
   def found_all(data)
-    @places = ActiveSupport::JSON.decode(data)
+    @places = JSON.parser.new(data).parse
     notify_places_loaded nil
   end
 end

@@ -7,8 +7,6 @@
 #
 
 require 'osx/cocoa'
-require 'active_support'
-require 'active_support/json'
 require 'load_operation_queue'
 require 'notification_hub'
 
