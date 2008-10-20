@@ -34,24 +34,24 @@ class HallenController < OSX::NSWindowController
   end
 
   def place_clicked(sender)
-    puts sender.inspect
+    puts sender.representedObject
   end
   
   def update_places_menu(notification)
-    places = @places_controller.places[1]
+    places = @places_controller.places
     
     cities = places.collect do |place|
-      place['place']['city'].strip
+      place.city
     end.uniq
     
     cities.sort.each do |city|
-      city_name = (city.strip.size > 0 ? city : "Überall")
-      city_item = @menu_item.menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{city_name}", nil, "", @menu_item.menu.numberOfItems)
+      city_item = @menu_item.menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{city}", nil, "", @menu_item.menu.numberOfItems)
       places_menu = NSMenu.alloc.init
-      places.find_all{|p| p['place']['city'].strip == city}.sort{|place1, place2| place1['place']['name'] <=> place2['place']['name']}.each do |place|
-        place_item = places_menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{place['place']['name']}", "place_clicked:", "", places_menu.numberOfItems)
+      places.find_all{|p| p.city == city}.sort{|place1, place2| place1.name <=> place2.name}.each do |place|
+        place_item = places_menu.insertItemWithTitle_action_keyEquivalent_atIndex_("#{place.name}", "place_clicked:", "", places_menu.numberOfItems)
         place_item.setTarget self
         place_item.setEnabled true
+        place_item.setRepresentedObject place
       end
       city_item.setTarget self
       places_menu.setAutoenablesItems false
